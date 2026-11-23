@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="tg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тарҳи саҳифаи вуруд — Kanban</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5.3.3 аз CDN; integrity аз иваз шудани файл ҳимоя мекунад -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="../assets/css/app.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark app-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="layout.html">📋 Kanban</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Кушодани меню">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" href="layout.html">Асосӣ</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="tasks.html">Вазифаҳо</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Тахтаҳо</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Мӯҳлатҳо</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2 text-white">
+        <span>Каримов Шоҳрух</span>
+        <span class="badge kb-role kb-role-manager">Роҳбар</span>
+        <a class="btn btn-sm btn-outline-light" href="login.html">Баромад</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-4">
+  <nav aria-label="Занҷираи навигатсия">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="tasks.html">Вазифаҳо</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Тарҳи саҳифаи вуруд</li>
+    </ol>
+  </nav>
+
+  <div class="row g-4">
+    <aside class="col-12 col-lg-3">
+      <div class="card"><div class="card-body text-center">
+        <span class="avatar avatar-lg mx-auto mb-3" role="img" aria-label="Иҷрокунанда: Раҳимов Фарҳод">РФ</span>
+        <h2 class="h5">Раҳимов Фарҳод</h2>
+        <p class="text-muted">Иҷрокунанда</p>
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+          <span class="badge priority priority-high">Баланд</span>
+          <span class="badge column-tag">Дар иҷро</span>
+        </div>
+      </div></div>
+    </aside>
+
+    <section class="col-12 col-lg-9" aria-labelledby="task-title">
+      <h1 id="task-title" class="mb-3">Тарҳи саҳифаи вуруд</h1>
+
+      <div class="card mb-4">
+        <div class="card-header">Маълумоти вазифа</div>
+        <div class="card-body">
+          <dl class="details">
+            <dt>Лоиҳа</dt><dd>Сомонаи мағозаи КОРД</dd>
+            <dt>Тавсиф</dt><dd>Макет ва услуби формаи вуруд</dd>
+            <dt>Мӯҳлат</dt><dd>20.11.2026</dd>
+            <dt>Афзалият</dt><dd>Баланд</dd>
+            <dt>Сутун</dt><dd>Дар иҷро</dd>
+            <dt>Созанда</dt><dd>Каримов Шоҳрух</dd>
+            <dt>Сохта шуд</dt><dd>02.10.2026</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-header">Шарҳҳо</div>
+        <div class="card-body">
+          <div class="comment"><strong>Раҳимов Фарҳод</strong> <time datetime="2026-11-03T10:00" class="text-muted">03.11.2026 10:00</time><br>Макет ним тайёр аст</div>
+          <div class="comment"><strong>Каримов Шоҳрух</strong> <time datetime="2026-11-03T12:30" class="text-muted">03.11.2026 12:30</time><br>Рангро иваз кунед, лутфан</div>
+          <form class="mt-3" method="post" action="task.html">
+            <label class="form-label" for="comment">Шарҳи нав</label>
+            <textarea class="form-control mb-2" id="comment" name="body" rows="3" placeholder="Шарҳ нависед…"></textarea>
+            <button class="btn btn-primary" type="submit">Фиристодан</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">Таърихи тағйирот</div>
+        <div class="card-body">
+          <div class="history-item"><strong>Каримов Шоҳрух</strong> · <time datetime="2026-11-03T12:35">03.11.2026 12:35</time><br>мӯҳлат: «2026-11-15» → «2026-11-20»</div>
+          <div class="history-item"><strong>Раҳимов Фарҳод</strong> · <time datetime="2026-11-01T08:45">01.11.2026 08:45</time><br>сутун: «Барои иҷро» → «Дар иҷро»</div>
+          <div class="history-item"><strong>Каримов Шоҳрух</strong> · <time datetime="2026-10-02T09:12">02.10.2026 09:12</time><br>иҷрокунанда: «—» → «Раҳимов Фарҳод»</div>
+          <div class="history-item"><strong>Каримов Шоҳрух</strong> · <time datetime="2026-10-02T09:10">02.10.2026 09:10</time><br>Вазифа сохта шуд</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="app-footer container py-4 text-center">
+  Kanban · идоракунии вазифаҳои даста · 2026
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="tg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вазифаҳо — Kanban</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5.3.3 аз CDN; integrity аз иваз шудани файл ҳимоя мекунад -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="../assets/css/app.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark app-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="layout.html">📋 Kanban</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Кушодани меню">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" href="layout.html">Асосӣ</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="tasks.html">Вазифаҳо</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Тахтаҳо</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Мӯҳлатҳо</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2 text-white">
+        <span>Каримов Шоҳрух</span>
+        <span class="badge kb-role kb-role-manager">Роҳбар</span>
+        <a class="btn btn-sm btn-outline-light" href="login.html">Баромад</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-4">
+  <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+    <h1 class="me-auto mb-0">Вазифаҳо</h1>
+    <a class="btn btn-primary" href="#">+ Вазифа</a>
+  </div>
+
+  <form class="card card-body mb-3" method="get" action="tasks.html" role="search">
+    <div class="row g-2">
+      <div class="col-12 col-md-4">
+        <label class="visually-hidden" for="q">Ҷустуҷӯ аз рӯи ном</label>
+        <input class="form-control" type="search" id="q" name="q" placeholder="Ҷустуҷӯ аз рӯи ном…">
+      </div>
+      <div class="col-12 col-sm-6 col-md-3">
+        <label class="visually-hidden" for="project_id">Лоиҳа</label>
+        <select class="form-select" id="project_id" name="project_id">
+          <option value="">Ҳамаи лоиҳаҳо</option>
+          <option value="1">Сомонаи мағозаи КОРД</option>
+          <option value="2">Барномаи мобилӣ</option>
+          <option value="3">Омодагӣ ба ҳимояи диплом</option>
+        </select>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3">
+        <label class="visually-hidden" for="priority">Афзалият</label>
+        <select class="form-select" id="priority" name="priority">
+          <option value="">Ҳама афзалиятҳо</option>
+          <option value="high">Баланд</option>
+          <option value="medium">Миёна</option>
+          <option value="low">Паст</option>
+        </select>
+      </div>
+      <div class="col-12 col-md-2 d-grid"><button class="btn btn-outline-primary" type="submit">Ёфтан</button></div>
+    </div>
+  </form>
+
+  <div class="card">
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0 table-cards">
+        <thead>
+          <tr><th scope="col">Вазифа</th><th scope="col">Лоиҳа</th><th scope="col">Иҷрокунанда</th><th scope="col">Мӯҳлат</th><th scope="col">Афзалият</th><th scope="col">Сутун</th><th scope="col"><span class="visually-hidden">Амалҳо</span></th></tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td data-label="Вазифа"><a href="task.html">Тарҳи саҳифаи вуруд</a></td>
+        <td data-label="Лоиҳа">Сомонаи мағозаи КОРД</td>
+        <td data-label="Иҷрокунанда"><div class="d-inline-flex align-items-center gap-2"><span class="avatar" aria-hidden="true">РФ</span>Раҳимов Фарҳод</div></td>
+        <td data-label="Мӯҳлат">20.11.2026</td>
+        <td data-label="Афзалият"><span class="badge priority priority-high">Баланд</span></td>
+        <td data-label="Сутун"><span class="badge column-tag">Дар иҷро</span></td>
+        <td class="text-end cell-actions"><a class="btn btn-sm btn-outline-primary" href="task.html">Кушодан</a></td>
+      </tr>
+      <tr>
+        <td data-label="Вазифа"><a href="task.html">Пойгоҳи додаҳо барои мағоза</a></td>
+        <td data-label="Лоиҳа">Сомонаи мағозаи КОРД</td>
+        <td data-label="Иҷрокунанда"><div class="d-inline-flex align-items-center gap-2"><span class="avatar" aria-hidden="true">НМ</span>Назарова Мадина</div></td>
+        <td data-label="Мӯҳлат"><span class="is-overdue">08.11.2026 · гузашта</span></td>
+        <td data-label="Афзалият"><span class="badge priority priority-high">Баланд</span></td>
+        <td data-label="Сутун"><span class="badge column-tag">Барои иҷро</span></td>
+        <td class="text-end cell-actions"><a class="btn btn-sm btn-outline-primary" href="task.html">Кушодан</a></td>
+      </tr>
+      <tr>
+        <td data-label="Вазифа"><a href="task.html">Саҳифаи каталоги маҳсулот</a></td>
+        <td data-label="Лоиҳа">Сомонаи мағозаи КОРД</td>
+        <td data-label="Иҷрокунанда"><div class="d-inline-flex align-items-center gap-2"><span class="avatar" aria-hidden="true">РФ</span>Раҳимов Фарҳод</div></td>
+        <td data-label="Мӯҳлат">25.11.2026</td>
+        <td data-label="Афзалият"><span class="badge priority priority-medium">Миёна</span></td>
+        <td data-label="Сутун"><span class="badge column-tag">Барои иҷро</span></td>
+        <td class="text-end cell-actions"><a class="btn btn-sm btn-outline-primary" href="task.html">Кушодан</a></td>
+      </tr>
+      <tr>
+        <td data-label="Вазифа"><a href="task.html">Сабад ва пардохт</a></td>
+        <td data-label="Лоиҳа">Сомонаи мағозаи КОРД</td>
+        <td data-label="Иҷрокунанда"><div class="d-inline-flex align-items-center gap-2"><span class="avatar" aria-hidden="true">НМ</span>Назарова Мадина</div></td>
+        <td data-label="Мӯҳлат"><span class="is-overdue">10.11.2026 · гузашта</span></td>
+        <td data-label="Афзалият"><span class="badge priority priority-medium">Миёна</span></td>
+        <td data-label="Сутун"><span class="badge column-tag">Санҷиш</span></td>
+        <td class="text-end cell-actions"><a class="btn btn-sm btn-outline-primary" href="task.html">Кушодан</a></td>
+      </tr>
+      <tr>
+        <td data-label="Вазифа"><a href="task.html">Логотип ва рангҳо</a></td>
+        <td data-label="Лоиҳа">Сомонаи мағозаи КОРД</td>
+        <td data-label="Иҷрокунанда"><div class="d-inline-flex align-items-center gap-2"><span class="avatar" aria-hidden="true">РФ</span>Раҳимов Фарҳод</div></td>
+        <td data-label="Мӯҳлат">30.10.2026</td>
+        <td data-label="Афзалият"><span class="badge priority priority-low">Паст</span></td>
+        <td data-label="Сутун"><span class="badge column-tag">Иҷрошуда</span></td>
+        <td class="text-end cell-actions"><a class="btn btn-sm btn-outline-primary" href="task.html">Кушодан</a></td>
+      </tr>
+      <tr>
+        <td data-label="Вазифа"><a href="task.html">Экрани воридшавӣ</a></td>
+        <td data-label="Лоиҳа">Барномаи мобилӣ</td>
+        <td data-label="Иҷрокунанда"><div class="d-inline-flex align-items-center gap-2"><span class="avatar" aria-hidden="true">РФ</span>Раҳимов Фарҳод</div></td>
+        <td data-label="Мӯҳлат">18.11.2026</td>
+        <td data-label="Афзалият"><span class="badge priority priority-high">Баланд</span></td>
+        <td data-label="Сутун"><span class="badge column-tag">Дар иҷро</span></td>
+        <td class="text-end cell-actions"><a class="btn btn-sm btn-outline-primary" href="task.html">Кушодан</a></td>
+      </tr>
+      <tr>
+        <td data-label="Вазифа"><a href="task.html">Ҳамоҳангсозӣ бо сервер</a></td>
+        <td data-label="Лоиҳа">Барномаи мобилӣ</td>
+        <td data-label="Иҷрокунанда"><div class="d-inline-flex align-items-center gap-2"><span class="avatar" aria-hidden="true">ҶЗ</span>Ҷалилова Зарина</div></td>
+        <td data-label="Мӯҳлат"><span class="is-overdue">05.11.2026 · гузашта</span></td>
+        <td data-label="Афзалият"><span class="badge priority priority-high">Баланд</span></td>
+        <td data-label="Сутун"><span class="badge column-tag">Барои иҷро</span></td>
+        <td class="text-end cell-actions"><a class="btn btn-sm btn-outline-primary" href="task.html">Кушодан</a></td>
+      </tr>
+      <tr>
+        <td data-label="Вазифа"><a href="task.html">Санҷиши барнома дар Android</a></td>
+        <td data-label="Лоиҳа">Барномаи мобилӣ</td>
+        <td data-label="Иҷрокунанда"><div class="d-inline-flex align-items-center gap-2"><span class="avatar" aria-hidden="true">ҶЗ</span>Ҷалилова Зарина</div></td>
+        <td data-label="Мӯҳлат">01.12.2026</td>
+        <td data-label="Афзалият"><span class="badge priority priority-medium">Миёна</span></td>
+        <td data-label="Сутун"><span class="badge column-tag">Барои иҷро</span></td>
+        <td class="text-end cell-actions"><a class="btn btn-sm btn-outline-primary" href="task.html">Кушодан</a></td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <nav class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-3" aria-label="Саҳифаҳо">
+    <span class="text-muted">Ёфт шуд: 13</span>
+    <ul class="pagination mb-0">
+      <li class="page-item disabled"><span class="page-link">Қафо</span></li>
+      <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+      <li class="page-item"><a class="page-link" href="tasks.html?page=2">2</a></li>
+      <li class="page-item"><a class="page-link" href="tasks.html?page=2">Пеш</a></li>
+    </ul>
+  </nav>
+</main>
+
+<footer class="app-footer container py-4 text-center">
+  Kanban · идоракунии вазифаҳои даста · 2026
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

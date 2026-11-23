@@ -1,0 +1,128 @@
+/* public/assets/css/app.css — стилҳои Kanban болои Bootstrap 5.3 */
+
+/* 1. Токенҳои дизайн (аз docs/09-design/ui-kit.md) */
+:root {
+  --kb-primary: #2563EB;
+  --kb-primary-dark: #1D4ED8;
+  --kb-primary-light: #E8EEFD;
+  --kb-nav: #1E293B;
+  --kb-bg: #F4F6F9;
+  --kb-border: #DDE2E8;
+  --kb-text: #1F2733;
+  --kb-muted: #5B6577;
+  --kb-success: #1E7B4F;
+  --kb-warning: #8A5600;
+  --kb-danger: #B42318;
+  --kb-radius: 8px;
+  /* Тағйири тағйирёбандаҳои Bootstrap (файли Bootstrap дастнахӯрда мемонад) */
+  --bs-body-font-family: "Inter", system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  --bs-body-font-size: 1rem;               /* 16px: ҳадди ақали дастрасӣ */
+  --bs-body-color: var(--kb-text);
+  --bs-body-bg: var(--kb-bg);
+  --bs-border-color: var(--kb-border);
+  --bs-border-radius: var(--kb-radius);
+  --bs-link-color: var(--kb-primary);
+  --bs-link-color-rgb: 37, 99, 235;
+  --bs-primary: var(--kb-primary);
+  --bs-primary-rgb: 37, 99, 235;
+}
+
+/* 2. Типографика */
+h1 { font-size: 1.75rem; font-weight: 600; line-height: 1.25; }
+h2 { font-size: 1.25rem; font-weight: 600; }
+.text-muted { color: var(--kb-muted) !important; }
+
+/* 3. Тугмаҳо ва фокус */
+.btn-primary {
+  --bs-btn-bg: var(--kb-primary);
+  --bs-btn-border-color: var(--kb-primary);
+  --bs-btn-hover-bg: var(--kb-primary-dark);
+  --bs-btn-hover-border-color: var(--kb-primary-dark);
+  --bs-btn-active-bg: var(--kb-primary-dark);
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--kb-primary);
+  --bs-btn-border-color: var(--kb-primary);
+  --bs-btn-hover-bg: var(--kb-primary);
+  --bs-btn-hover-border-color: var(--kb-primary);
+}
+.btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+.btn-sm { min-height: 36px; }
+:focus-visible { outline: 3px solid rgba(37, 99, 235, .45); outline-offset: 2px; }
+
+/* 4. Сарлавҳа (navbar) */
+.app-navbar { background: var(--kb-nav); }
+.app-navbar .navbar-brand { font-weight: 600; }
+.app-navbar .nav-link { color: #CBD5E1; min-height: 44px; display: flex; align-items: center; }
+.app-navbar .nav-link:hover, .app-navbar .nav-link.active { color: #fff; }
+.role-badge { background: #FDE9B8; color: #5C3A00; font-weight: 600; }
+
+/* 5. Корт ва нишондиҳандаҳо */
+.card { border-color: var(--kb-border); box-shadow: 0 1px 2px rgba(31, 39, 51, .05); }
+.card-header { background: #fff; font-weight: 600; }
+.stat-card .stat-number { font-size: 2rem; font-weight: 600; line-height: 1.1; }
+.stat-card .stat-label { color: var(--kb-muted); }
+.stat-card.is-danger .stat-number { color: var(--kb-danger); }
+.project-card { border-left: 4px solid var(--kb-primary); }
+
+/* Саҳифабандӣ бо рангҳои фирмавӣ */
+.pagination {
+  --bs-pagination-color: var(--kb-primary);
+  --bs-pagination-hover-color: var(--kb-primary-dark);
+  --bs-pagination-active-bg: var(--kb-primary);
+  --bs-pagination-active-border-color: var(--kb-primary);
+  --bs-pagination-focus-color: var(--kb-primary-dark);
+}
+
+/* 6. Нишонҳо: номи синф = қимати ENUM дар пойгоҳ */
+.badge.priority, .badge.kb-role { font-weight: 600; border-radius: 999px; padding: .35em .75em; }
+.priority-high   { background: #FDE8E6; color: var(--kb-danger); }
+.priority-medium { background: #FFF1D6; color: var(--kb-warning); }
+.priority-low    { background: #E3F4EA; color: var(--kb-success); }
+.kb-role-manager { background: #FFF1D6; color: var(--kb-warning); }
+.kb-role-member  { background: var(--kb-primary-light); color: var(--kb-primary-dark); }
+.badge.column-tag { background: var(--kb-primary-light); color: var(--kb-primary-dark); font-weight: 600; }
+.is-overdue { color: var(--kb-danger); font-weight: 600; }
+
+/* 7. Аватар */
+.avatar { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px;
+  border-radius: 50%; background: var(--kb-primary-light); color: var(--kb-primary-dark); font-weight: 600; font-size: .8125rem; }
+.avatar-lg { width: 72px; height: 72px; font-size: 1.5rem; }
+
+/* 8. Рӯйхати «ном — қимат» (CSS Grid) */
+.details { display: grid; grid-template-columns: 180px 1fr; gap: .5rem 1rem; margin: 0; }
+.details dt { color: var(--kb-muted); font-weight: 400; }
+.details dd { margin: 0; }
+@media (max-width: 575.98px) {
+  .details { grid-template-columns: 1fr; gap: 0; }
+  .details dd { margin-bottom: .5rem; }
+}
+
+/* 9. Ҷадвал, ки дар телефон ба кортҳо табдил меёбад */
+@media (max-width: 767.98px) {
+  .table-cards thead { display: none; }
+  .table-cards tr { display: block; padding: .75rem 1rem; border-bottom: 1px solid var(--kb-border); }
+  .table-cards td { display: block; border: 0; padding: .125rem 0 !important; }
+  .table-cards td[data-label]::before { content: attr(data-label) ": "; color: var(--kb-muted); font-size: .8125rem; }
+  .table-cards td.cell-actions { padding-top: .5rem !important; }
+}
+
+/* 10. Таърихи тағйирот ва шарҳҳо */
+.history-item { border-left: 3px solid var(--kb-border); padding: 0 0 .75rem 1rem; margin-left: .25rem; }
+.history-item time { color: var(--kb-muted); font-size: .8125rem; }
+.comment { padding: .75rem 0; border-bottom: 1px solid var(--kb-border); }
+.comment:last-of-type { border-bottom: 0; }
+
+/* 11. Саҳифаи воридшавӣ */
+.login-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+.login-card { width: 100%; max-width: 400px; }
+.login-brand { font-weight: 600; font-size: 1.25rem; color: var(--kb-nav); }
+
+/* 12. Поёни саҳифа */
+.app-footer { color: var(--kb-muted); font-size: .8125rem; }
+
+/* Чоп */
+@media print {
+  .app-navbar, .app-footer, form[role="search"] { display: none !important; }
+  body { background: #fff; }
+}
