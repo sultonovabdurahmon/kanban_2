@@ -1,0 +1,5 @@
+# Барои Apache (XAMPP): ҳамаи дархостҳои бе файл ба front controller равона мешаванд
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]

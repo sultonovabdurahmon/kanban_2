@@ -25,6 +25,9 @@
   --bs-link-color-rgb: 37, 99, 235;
   --bs-primary: var(--kb-primary);
   --bs-primary-rgb: 37, 99, 235;
+  /* Хатои шакл: контрасти ≥ 4.5:1 ба пасзамина */
+  --bs-form-invalid-color: var(--kb-danger);
+  --bs-form-invalid-border-color: var(--kb-danger);
 }
 
 /* 2. Типографика */

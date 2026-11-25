@@ -1,0 +1,10 @@
+# Танзимоти воқеӣ бо паролҳо ба Git дохил намешавад (config.example.php дохил мешавад)
+config/config.php
+
+# Файлҳои боршудаи корбарон
+uploads/*
+!uploads/.htaccess
+public/uploads/*
+
+.DS_Store
+Thumbs.db
