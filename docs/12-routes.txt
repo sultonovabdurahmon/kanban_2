@@ -1,0 +1,39 @@
+# Кори лабораторӣ 12: натиҷаи curl (php -S localhost:8000 -t public; PHP 8.3.6)
+# Формат: метод, масир -> рамзи ҳолат
+
+## Масирҳои GET (интизорӣ: 200)
+GET   /                            -> 200
+GET   /login                       -> 200
+GET   /tasks                       -> 200
+GET   /tasks/1                     -> 200
+GET   /tasks/2                     -> 200
+GET   /tasks/6                     -> 200
+GET   /projects                    -> 200
+GET   /projects/1                  -> 200
+GET   /projects/3                  -> 200
+GET   /tasks?q=%D1%81%D0%B0%D0%B1%D0%B0%D0%B4 -> 200
+GET   /assets/css/app.css          -> 200
+
+## Объекти вуҷуднадошта ва масири номаълум (интизорӣ: 404)
+GET   /tasks/99                    -> 404
+GET   /projects/99                 -> 404
+GET   /tasks/abc                   -> 404
+GET   /tasks/1/edit                -> 404
+GET   /nope                        -> 404
+
+## Методи нодуруст (интизорӣ: 405 бо сарлавҳаи Allow)
+POST  /tasks                       -> 405
+POST  /tasks/1                     -> 405
+POST  /projects                    -> 405
+POST  /                            -> 405
+Allow-и POST /tasks: Allow: GET
+
+## Саҳифаи 404 дар макети умумӣ (сарлавҳаи <h1> ва меню ҳаст)
+navbar-brand дар 404: 1
+
+## Экранкунӣ ва суроғаҳо: пайвандҳои CSS/JS тавассути url()
+href="/assets/css/app.css"
+src="/assets/js/app.js"
+
+## ҶУСТУҶӮИ ФАВРӣ барои API-и муваққатӣ (кори лаб. 11)
+2 сабт: ['Ҳамоҳангсозӣ бо сервер', 'Ҳамкорӣ бо мизоҷ']
